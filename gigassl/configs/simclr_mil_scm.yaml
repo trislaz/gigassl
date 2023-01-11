@@ -1,0 +1,56 @@
+name: tcgamoco_wo_all_tables
+dataset: 
+  wsi: /cluster/CBIO/home/tlazard/packages/gigassl/test_dataset/encoded/level_1/imagenet
+  num_workers: 10 
+  nb_tiles: 5
+  feature_depth: 256
+
+model: 
+  name: simclrmil
+  freeze_pooling: 0
+  model_path: 
+  num_class: 512 
+  tile_encoder: 
+  downmap: 224
+  temperature_xent: 0.05
+
+train:
+  optimizer: 
+    name: adam
+    weight_decay: 0.0005
+    momentum: 0.9
+  warmup_epochs: 10
+  warmup_lr: 0
+  base_lr: 0.03
+  final_lr: 0
+  num_epochs: 3000 
+  stop_at_epoch: 3000 
+  batch_size: 256
+  knn_monitor: True # knn monitor will take more time
+  knn_interval: 1
+  knn_k: 200
+
+eval: # linear evaluation, False will turn off automatic evaluation after training
+  optimizer: 
+    name: sgd
+    weight_decay: 0
+    momentum: 0.9
+  warmup_lr: 0
+  warmup_epochs: 0
+  base_lr: 30
+  final_lr: 0
+  batch_size: 256
+  num_epochs: 100
+
+logger:
+  tensorboard: True
+  matplotlib: True
+
+seed: null # None type for yaml file
+# two things might lead to stochastic behavior other than seed:
+# worker_init_fn from dataloader and torch.nn.functional.interpolate 
+# (keep this in mind if you want to achieve 100% deterministic)
+
+
+
+
