@@ -11,9 +11,9 @@ This repository allows you to:
 # Perform any classification task on the TCGA
 
 For benchmarking or research purposes, the Giga-SSL embeddings provide an extremely quick way to perform a classification task on the TCGA.
-Using the TCGA embeddings to perform linear classification only requires the dependencies in `requirements_lin.txt`
+Using the TCGA embeddings to perform linear classification only requires the dependencies in `requirements_lin.yml`
 ```
-conda create -n myenv && conda activate myenv && conda install --yes --file requirements_lin.txt && conda list
+conda env create -f requirements_lin.yml && conda activate linear_probing && conda list
 ```
 
 ## Build the label csv
@@ -65,11 +65,13 @@ python compute_results.py --fixsplit
 
 # Train a Giga-SSL model on your own dataset
 
-To perform a full Giga-SSL training you will need more python dependencies. First install all the one listed in requirements.txt:
+To perform a full Giga-SSL training you will need more python dependencies. First install all the one listed in requirements.yml:
+You may want to install the pytorch version appropriate to your cuda version (if so, change if in requirements.yml).
 
 ```
-conda create -n myenv && conda activate myenv && conda install --yes --file requirements.txt && conda list
+conda env create -f requirements.yml && conda activate gigassl 
 ```
+
 Then install [SparseConvNet](https://github.com/facebookresearch/SparseConvNet), following the instruction on its github repository. 
 
 Two steps are then necessary to train a Giga-SSL model on your own dataset:
