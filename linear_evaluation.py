@@ -6,7 +6,7 @@ import os
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import cross_val_score, StratifiedKFold
 from sklearn.metrics import roc_auc_score
-from sklearn.preprocessing import StandardScaler, Normalizer
+from sklearn.preprocessing import StandardScaler
 from argparse import ArgumentParser
 
 def main(csv=None, dataset=None, splitdir=None):
@@ -33,9 +33,6 @@ def main(csv=None, dataset=None, splitdir=None):
     X = np.vstack([embeddings[i, :] for i in Is])
     y = df['label'].values
 
-    ## scale the data
-    norm = Normalizer()
-    X = norm.fit_transform(X)
 
     # Splits the data into 5 test/train splits.
     splits = split_data(X, y, list(df['ID'].values), args.splitdir)
