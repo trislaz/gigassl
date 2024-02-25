@@ -2,11 +2,12 @@
 
 This repository allows you to:
 * [Perform any classification task](#perform-any-classification-task-on-the-tcga)
-* [Replicate the results of the paper](#replicate-the-results-of-the-paper) : **[Arxiv version](https://arxiv.org/abs/2212.03273)**
+* [Replicate the results of the paper](#replicate-the-results-of-the-paper) : **[CVPRW Paper](https://openaccess.thecvf.com/content/CVPR2023W/CVMI/papers/Lazard_Giga-SSL_Self-Supervised_Learning_for_Gigapixel_Images_CVPRW_2023_paper.pdf)**
 * [Train a Giga-SSL model on your own dataset](#train-a-giga-ssl-model-on-your-own-dataset)
 * [compute your WSI representations](#compute-the-giga-ssl-representations)
 
-
+> **NOTE** If you only want to encode WSIs using pre-trained Giga-SSL models, please visit [https://github.com/trislaz/Democratizing_WSI](https://github.com/trislaz/Democratizing_WSI)
+> You will find there a simple one-command line API to do that, using a variety of Giga-SSL architecture and tile-embedding models.
 
 # Perform any classification task on the TCGA
 
