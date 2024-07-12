@@ -94,8 +94,8 @@ In `tiling_sharedaug.sh` you have to fill the following variables:
 * level: the level of the WSI at which the tiles are extracted.
 * tiler: either `imagenet` or `moco`. If `moco`, you have to provide a MoCo model in the `model_path` variable.
 * normalizer: either `macenko` or None. Using `macenko` will first normalize the tiles with the Macenko method with the reference image being build_dataset/reference_macenko.png TODO add the macenko image.
-* Naug: number of random augmentation of tiles used per WSI.
-* Nt: number of tiles per augmentation.
+* Naug: number of random augmentation of tiles used per WSI. (Recommended: 25)
+* Nt: number of tiles per augmentation. (Recommended: 25)
 * NWSI: number of WSIs to encode in each job of the job-array.
 * num_worker: number of workers used to encode the tiles.
 
