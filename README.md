@@ -6,8 +6,9 @@ This repository allows you to:
 * [Train a Giga-SSL model on your own dataset](#train-a-giga-ssl-model-on-your-own-dataset)
 * [compute your WSI representations](#compute-the-giga-ssl-representations)
 
-> **NOTE** If you only want to encode WSIs using pre-trained Giga-SSL models, please visit [https://github.com/trislaz/Democratizing_WSI](https://github.com/trislaz/Democratizing_WSI)
+> **NOTE** If you only want to **encode WSIs using pre-trained Giga-SSL** models, please visit [https://github.com/trislaz/Democratizing_WSI](https://github.com/trislaz/Democratizing_WSI)
 > You will find there a simple one-command line API to do that, using a variety of Giga-SSL architecture and tile-embedding models.
+> [**MODELS AND EMBEDDINGS ALSO DIRECTLY AVAILABLE HERE**](https://data.mendeley.com/datasets/d573xfd9fg/6)
 
 # Perform any classification task on the TCGA
 
